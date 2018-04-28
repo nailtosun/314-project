@@ -1,0 +1,7 @@
+|ModeSelection
+clk => ~NO_FANOUT~
+ac_button => ~NO_FANOUT~
+dc_button => ~NO_FANOUT~
+vga_ports <= <GND>
+
+
