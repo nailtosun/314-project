@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\nailt\Desktop\my_git\314-Project\RMS_finder\Square\simulation\qsim
+vsquare
+Z1 IC<ffQ2bHe0jd8S9^3Z0jn3
+Z2 V@PWFL[RCggoC>aoF]fDK=0
+Z3 dC:\Users\nailt\Desktop\my_git\314-Project\RMS_finder\Square\simulation\qsim
+Z4 w1526926254
+Z5 8square.vo
+Z6 Fsquare.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+!i10b 1
+Z9 !s100 FgEodAYzM`UDeHX6O0H^i3
+!s85 0
+Z10 !s108 1526926256.348000
+Z11 !s107 square.vo|
+Z12 !s90 -work|work|square.vo|
+!s101 -O0
+vsquare_vlg_check_tst
+!i10b 1
+!s100 NkgIKLgZcIgA6GG@8j<6h2
+IHU57iU=2KNPf_Dj3Hj[LK3
+VQA7;m14]@U86C1_Wa@f3m1
+R3
+Z13 w1526926251
+Z14 8Waveform.vwf.vt
+Z15 FWaveform.vwf.vt
+L0 59
+R7
+r1
+!s85 0
+31
+Z16 !s108 1526926256.506000
+Z17 !s107 Waveform.vwf.vt|
+Z18 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R8
+vsquare_vlg_sample_tst
+!i10b 1
+!s100 2z>PPHCbm9@[FkLzkNQB]1
+IIL[3Q1HES9``G1`kclhXB3
+V9PcO>^@<[[LJO@DT05E523
+R3
+R13
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8
+vsquare_vlg_vec_tst
+!i10b 1
+!s100 a[f]9SzQE:`bnzi@_Qd4A1
+I`af3efNcETHjY1an>lAY]0
+VQAJPcBlW7zeldkCkU86<01
+R3
+R13
+R14
+R15
+L0 711
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8

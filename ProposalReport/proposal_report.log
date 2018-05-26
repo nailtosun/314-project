@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.23)  21 MAY 2018 20:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.2.23)  21 MAY 2018 23:34
 entering extended mode
 **./proposal_report.tex
 (proposal_report.tex
@@ -598,6 +598,9 @@ LaTeX Warning: Label `fig:zero' multiply defined.
 
 LaTeX Warning: Label `fig:zero' multiply defined.
 
+
+LaTeX Warning: Label `fig:zero' multiply defined.
+
 )
 \openout1 = `proposal_report.aux'.
 
@@ -694,15 +697,15 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* bindingoffset: 14.45377pt
+* bindingoffset: 7.22743pt
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 438.51413pt, 72.26999pt)
+* h-part:(L,W,R)=(72.26999pt, 445.74046pt, 72.26999pt)
 * v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=438.51413pt
+* \textwidth=445.74046pt
 * \textheight=700.50687pt
-* \oddsidemargin=14.45377pt
+* \oddsidemargin=7.22743pt
 * \evensidemargin=0.0pt
 * \topmargin=-37.0pt
 * \headheight=12.0pt
@@ -766,14 +769,15 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-<blockdiagram.png, id=1, 379.86919pt x 282.75638pt>
-File: blockdiagram.png Graphic file (type png)
-<use blockdiagram.png>
-Package pdftex.def Info: blockdiagram.png  used on input line 37.
-(pdftex.def)             Requested size: 265.90662pt x 197.9281pt.
  [1
 
 {C:/Users/nailt/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<blockdiagram.png, id=7, 379.86919pt x 282.75638pt>
+File: blockdiagram.png Graphic file (type png)
+<use blockdiagram.png>
+Package pdftex.def Info: blockdiagram.png  used on input line 50.
+(pdftex.def)             Requested size: 151.94498pt x 113.10054pt.
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -782,50 +786,49 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang3.sty"
 File: lstlang3.sty 2015/06/04 1.6 listings language file
-)
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 62.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptm.fd"
+) [2 <./blockdiagram.png>]
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 70.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlptm.fd"
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 62.
-
-Overfull \hbox (11.49045pt too wide) in paragraph at lines 70--71
-[][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[2 <./blockdiagram.png>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 80.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 70.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 70.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
-<Mean_finder.png, id=18, 1007.26312pt x 127.97812pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 70.
+ [3]
+<Mean_finder.png, id=21, 1007.26312pt x 127.97812pt>
 File: Mean_finder.png Graphic file (type png)
 <use Mean_finder.png>
-Package pdftex.def Info: Mean_finder.png  used on input line 110.
+Package pdftex.def Info: Mean_finder.png  used on input line 160.
 (pdftex.def)             Requested size: 503.63033pt x 63.98889pt.
-<Rms_out.png, id=20, 1023.825pt x 117.43875pt>
+<Rms_out.png, id=23, 1023.825pt x 117.43875pt>
 File: Rms_out.png Graphic file (type png)
 <use Rms_out.png>
-Package pdftex.def Info: Rms_out.png  used on input line 117.
+Package pdftex.def Info: Rms_out.png  used on input line 167.
 (pdftex.def)             Requested size: 511.91124pt x 58.71922pt.
- [3 <./Mean_finder.png> <./Rms_out.png>] (proposal_report.aux)
+<square.png, id=24, 1007.26312pt x 114.4275pt>
+File: square.png Graphic file (type png)
+<use square.png>
+Package pdftex.def Info: square.png  used on input line 173.
+(pdftex.def)             Requested size: 503.63033pt x 57.21361pt.
+ [4 <./Mean_finder.png> <./Rms_out.png> <./square.png>] (proposal_report.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15649 strings out of 493303
- 311018 string characters out of 3138856
- 364908 words of memory out of 3000000
- 19029 multiletter control sequences out of 15000+200000
- 563268 words of font info for 91 fonts, out of 3000000 for 9000
+ 15660 strings out of 493303
+ 311163 string characters out of 3138856
+ 376075 words of memory out of 3000000
+ 19039 multiletter control sequences out of 15000+200000
+ 564375 words of font info for 92 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,14n,74p,10389b,1714s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,14n,74p,10389b,1710s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
@@ -834,9 +837,9 @@ ic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/symbol/u
 syr.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on proposal_report.pdf (3 pages, 120734 bytes).
+Output written on proposal_report.pdf (4 pages, 131767 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
