@@ -1,6 +1,7 @@
 vendor_name = ModelSim
 source_file = 1, C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Square/square.v
 source_file = 1, C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Square/Waveform.vwf
+source_file = 1, C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Square/Waveform1.vwf
 source_file = 1, C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Square/db/square.cbx.xml
 design_name = square
 instance = comp, \square_out[0]~output , square_out[0]~output, square, 1

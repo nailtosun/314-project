@@ -1,5 +1,5 @@
 Analysis & Synthesis report for square
-Mon May 21 21:09:50 2018
+Sun Jun 03 01:03:14 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -43,7 +43,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 21 21:09:50 2018      ;
+; Analysis & Synthesis Status     ; Successful - Sun Jun 03 01:03:14 2018      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; square                                     ;
 ; Top-level Entity Name           ; square                                     ;
@@ -260,7 +260,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -270,7 +270,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon May 21 21:09:47 2018
+    Info: Processing started: Sun Jun 03 01:03:12 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off square -c square
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file square.v
@@ -294,9 +294,9 @@ Info (21057): Implemented 70 device resources after synthesis - the final resour
     Info (21061): Implemented 24 logic cells
     Info (21062): Implemented 1 DSP elements
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 616 megabytes
-    Info: Processing ended: Mon May 21 21:09:50 2018
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 617 megabytes
+    Info: Processing ended: Sun Jun 03 01:03:14 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

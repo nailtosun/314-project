@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mean
-Mon May 21 21:20:46 2018
+Sun Jun 03 13:47:17 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,14 +13,11 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -46,14 +43,14 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +---------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 21 21:20:46 2018      ;
+; Analysis & Synthesis Status     ; Successful - Sun Jun 03 13:47:17 2018      ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                   ; Mean                                       ;
 ; Top-level Entity Name           ; Mean                                       ;
 ; Family                          ; Cyclone V                                  ;
 ; Logic utilization (in ALMs)     ; N/A                                        ;
-; Total registers                 ; 125                                        ;
-; Total pins                      ; 77                                         ;
+; Total registers                 ; 128                                        ;
+; Total pins                      ; 97                                         ;
 ; Total virtual pins              ; 0                                          ;
 ; Total block memory bits         ; 0                                          ;
 ; Total DSP Blocks                ; 0                                          ;
@@ -171,21 +168,20 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
-; Mean.v                           ; yes             ; User Verilog HDL File        ; C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/Mean.v                 ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                    ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                   ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc               ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                    ;         ;
-; db/lpm_divide_rqo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/db/lpm_divide_rqo.tdf  ;         ;
-; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/db/abs_divider_4dg.tdf ;         ;
-; db/alt_u_div_o2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/db/alt_u_div_o2f.tdf   ;         ;
-; db/lpm_abs_4p9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/db/lpm_abs_4p9.tdf     ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
+; Mean.v                           ; yes             ; User Verilog HDL File        ; C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/Mean.v                     ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                        ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                       ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                   ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                        ;         ;
+; db/lpm_divide_3dm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/db/lpm_divide_3dm.tdf      ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/db/sign_div_unsign_9nh.tdf ;         ;
+; db/alt_u_div_o2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/db/alt_u_div_o2f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -193,50 +189,38 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 678       ;
+; Estimate of Logic utilization (ALMs needed) ; 639       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 1348      ;
+; Combinational ALUT usage for logic          ; 1252      ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 8         ;
-;     -- 5 input functions                    ; 515       ;
-;     -- 4 input functions                    ; 445       ;
-;     -- <=3 input functions                  ; 380       ;
+;     -- 6 input functions                    ; 21        ;
+;     -- 5 input functions                    ; 516       ;
+;     -- 4 input functions                    ; 450       ;
+;     -- <=3 input functions                  ; 265       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 125       ;
+; Dedicated logic registers                   ; 128       ;
 ;                                             ;           ;
-; I/O pins                                    ; 77        ;
+; I/O pins                                    ; 97        ;
 ; Total DSP Blocks                            ; 0         ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 125       ;
-; Total fan-out                               ; 6282      ;
-; Average fan-out                             ; 3.86      ;
+; Maximum fan-out                             ; 128       ;
+; Total fan-out                               ; 6061      ;
+; Average fan-out                             ; 3.85      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
-+---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                ; Library Name ;
-+---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------+--------------+
-; |Mean                                 ; 1348 (104)        ; 125 (125)    ; 0                 ; 0          ; 77   ; 0            ; |Mean                                                                                              ; work         ;
-;    |lpm_divide:Div0|                  ; 1244 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0                                                                              ; work         ;
-;       |lpm_divide_rqo:auto_generated| ; 1244 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0|lpm_divide_rqo:auto_generated                                                ; work         ;
-;          |abs_divider_4dg:divider|    ; 1244 (33)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider                        ; work         ;
-;             |alt_u_div_o2f:divider|   ; 1147 (1147)       ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|alt_u_div_o2f:divider  ; work         ;
-;             |lpm_abs_4p9:my_abs_den|  ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|lpm_abs_4p9:my_abs_den ; work         ;
-;             |lpm_abs_4p9:my_abs_num|  ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|lpm_abs_4p9:my_abs_num ; work         ;
-+---------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                     ;
++----------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+--------------+
+; |Mean                                  ; 1252 (124)        ; 128 (128)    ; 0                 ; 0          ; 97   ; 0            ; |Mean                                                                                                 ; work         ;
+;    |lpm_divide:Div0|                   ; 1128 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0                                                                                 ; work         ;
+;       |lpm_divide_3dm:auto_generated|  ; 1128 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0|lpm_divide_3dm:auto_generated                                                   ; work         ;
+;          |sign_div_unsign_9nh:divider| ; 1128 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0|lpm_divide_3dm:auto_generated|sign_div_unsign_9nh:divider                       ; work         ;
+;             |alt_u_div_o2f:divider|    ; 1128 (1128)       ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |Mean|lpm_divide:Div0|lpm_divide_3dm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider ; work         ;
++----------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; dum_index[29..31]                     ; Lost fanout        ;
-; Total Number of Removed Registers = 3 ;                    ;
-+---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -244,24 +228,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 125   ;
-; Number of registers using Synchronous Clear  ; 32    ;
-; Number of registers using Synchronous Load   ; 32    ;
+; Total registers                              ; 128   ;
+; Number of registers using Synchronous Clear  ; 64    ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 93    ;
+; Number of registers using Clock Enable       ; 96    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; dum_index[0]                           ; 3       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
@@ -269,7 +243,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |Mean|index[31]            ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |Mean|sum[31]              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -280,12 +254,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------+----------------+------------------------+
 ; LPM_WIDTHN             ; 32             ; Untyped                ;
 ; LPM_WIDTHD             ; 32             ; Untyped                ;
-; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                ;
-; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_PIPELINE           ; 0              ; Untyped                ;
-; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_rqo ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_3dm ; Untyped                ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
@@ -301,7 +275,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -311,7 +285,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Mon May 21 21:20:39 2018
+    Info: Processing started: Sun Jun 03 13:47:12 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mean -c Mean
 Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file mean.v
@@ -323,69 +297,25 @@ Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0"
 Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter:
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
-    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_rqo.tdf
-    Info (12023): Found entity 1: lpm_divide_rqo
-Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
-    Info (12023): Found entity 1: abs_divider_4dg
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3dm.tdf
+    Info (12023): Found entity 1: lpm_divide_3dm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o2f.tdf
     Info (12023): Found entity 1: alt_u_div_o2f
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_4p9.tdf
-    Info (12023): Found entity 1: lpm_abs_4p9
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/output_files/Mean.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 32 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "freq[0]"
-    Warning (15610): No output dependent on input pin "freq[1]"
-    Warning (15610): No output dependent on input pin "freq[2]"
-    Warning (15610): No output dependent on input pin "freq[3]"
-    Warning (15610): No output dependent on input pin "freq[4]"
-    Warning (15610): No output dependent on input pin "freq[5]"
-    Warning (15610): No output dependent on input pin "freq[6]"
-    Warning (15610): No output dependent on input pin "freq[7]"
-    Warning (15610): No output dependent on input pin "freq[8]"
-    Warning (15610): No output dependent on input pin "freq[9]"
-    Warning (15610): No output dependent on input pin "freq[10]"
-    Warning (15610): No output dependent on input pin "freq[11]"
-    Warning (15610): No output dependent on input pin "freq[12]"
-    Warning (15610): No output dependent on input pin "freq[13]"
-    Warning (15610): No output dependent on input pin "freq[14]"
-    Warning (15610): No output dependent on input pin "freq[15]"
-    Warning (15610): No output dependent on input pin "freq[16]"
-    Warning (15610): No output dependent on input pin "freq[17]"
-    Warning (15610): No output dependent on input pin "freq[18]"
-    Warning (15610): No output dependent on input pin "freq[19]"
-    Warning (15610): No output dependent on input pin "freq[20]"
-    Warning (15610): No output dependent on input pin "freq[21]"
-    Warning (15610): No output dependent on input pin "freq[22]"
-    Warning (15610): No output dependent on input pin "freq[23]"
-    Warning (15610): No output dependent on input pin "freq[24]"
-    Warning (15610): No output dependent on input pin "freq[25]"
-    Warning (15610): No output dependent on input pin "freq[26]"
-    Warning (15610): No output dependent on input pin "freq[27]"
-    Warning (15610): No output dependent on input pin "freq[28]"
-    Warning (15610): No output dependent on input pin "freq[29]"
-    Warning (15610): No output dependent on input pin "freq[30]"
-    Warning (15610): No output dependent on input pin "freq[31]"
-Info (21057): Implemented 1425 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 45 input pins
+Info (21057): Implemented 1381 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 65 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 1348 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 652 megabytes
-    Info: Processing ended: Mon May 21 21:20:46 2018
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:06
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/nailt/Desktop/my_git/314-Project/RMS_finder/Mean/output_files/Mean.map.smsg.
+    Info (21061): Implemented 1284 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 626 megabytes
+    Info: Processing ended: Sun Jun 03 13:47:17 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

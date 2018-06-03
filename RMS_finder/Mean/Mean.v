@@ -1,33 +1,33 @@
-module Mean(clk, freq, average, serial_in);
+module Mean(clk,period,serial_square_in,mean);
+input [31:0] serial_square_in;
 input clk;
-input [11:0] serial_in;
-input [31:0] freq;
-output reg [31:0] average;
-integer index,N,dum_index,sum; 
+input [31:0] period; //how many clock hit in one period
+output reg [31:0] mean;
+
+integer period_discrete, counter, sum;
 initial
 begin
+period_discrete<=0;
+counter <= 0;
 sum <= 0;
-N <= 0;
-index <= 0;
-average <= 0;
-dum_index <= 1;
 end
+
+
 always @(posedge clk)
 begin
-	//N=f_sampling/freq //input and sampling frequency determines the N
-	N = 8; //for testing
-	if (index<N)
-		begin
-		sum <= sum + serial_in;
-		index <= index+1;
-		end
-	else if(index==N)
+period_discrete <= period/1; //1ns for testing real value 20ns 
+
+if (counter < period_discrete)
 	begin
-	dum_index <= dum_index + 1;
-	average <= sum/(N*dum_index);
-	index <= index +1;
-	dum_index <= dum_index + 1;
+		sum <= sum + serial_square_in;
+		counter <= counter + 1;
 	end
-	else index <= 0;
+else if (counter == period_discrete)
+	begin
+		mean <= sum/period;
+		sum <= 0;
+		counter <= 0;
+	end
 end
+
 endmodule
