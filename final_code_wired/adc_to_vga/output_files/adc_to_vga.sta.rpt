@@ -1,0 +1,1270 @@
+TimeQuest Timing Analyzer report for adc_to_vga
+Mon Jun 04 07:34:29 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1100mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1100mV 85C Model Setup Summary
+  8. Slow 1100mV 85C Model Hold Summary
+  9. Slow 1100mV 85C Model Recovery Summary
+ 10. Slow 1100mV 85C Model Removal Summary
+ 11. Slow 1100mV 85C Model Minimum Pulse Width Summary
+ 12. Setup Times
+ 13. Hold Times
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Slow 1100mV 85C Model Metastability Report
+ 17. Slow 1100mV 0C Model Fmax Summary
+ 18. Slow 1100mV 0C Model Setup Summary
+ 19. Slow 1100mV 0C Model Hold Summary
+ 20. Slow 1100mV 0C Model Recovery Summary
+ 21. Slow 1100mV 0C Model Removal Summary
+ 22. Slow 1100mV 0C Model Minimum Pulse Width Summary
+ 23. Setup Times
+ 24. Hold Times
+ 25. Clock to Output Times
+ 26. Minimum Clock to Output Times
+ 27. Slow 1100mV 0C Model Metastability Report
+ 28. Fast 1100mV 85C Model Setup Summary
+ 29. Fast 1100mV 85C Model Hold Summary
+ 30. Fast 1100mV 85C Model Recovery Summary
+ 31. Fast 1100mV 85C Model Removal Summary
+ 32. Fast 1100mV 85C Model Minimum Pulse Width Summary
+ 33. Setup Times
+ 34. Hold Times
+ 35. Clock to Output Times
+ 36. Minimum Clock to Output Times
+ 37. Fast 1100mV 85C Model Metastability Report
+ 38. Fast 1100mV 0C Model Setup Summary
+ 39. Fast 1100mV 0C Model Hold Summary
+ 40. Fast 1100mV 0C Model Recovery Summary
+ 41. Fast 1100mV 0C Model Removal Summary
+ 42. Fast 1100mV 0C Model Minimum Pulse Width Summary
+ 43. Setup Times
+ 44. Hold Times
+ 45. Clock to Output Times
+ 46. Minimum Clock to Output Times
+ 47. Fast 1100mV 0C Model Metastability Report
+ 48. Multicorner Timing Analysis Summary
+ 49. Setup Times
+ 50. Hold Times
+ 51. Clock to Output Times
+ 52. Minimum Clock to Output Times
+ 53. Board Trace Model Assignments
+ 54. Input Transition Times
+ 55. Signal Integrity Metrics (Slow 1100mv 0c Model)
+ 56. Signal Integrity Metrics (Slow 1100mv 85c Model)
+ 57. Signal Integrity Metrics (Fast 1100mv 0c Model)
+ 58. Signal Integrity Metrics (Fast 1100mv 85c Model)
+ 59. Setup Transfers
+ 60. Hold Transfers
+ 61. Report TCCS
+ 62. Report RSKM
+ 63. Unconstrained Paths
+ 64. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name      ; adc_to_vga                                         ;
+; Device Family      ; Cyclone V                                          ;
+; Device Name        ; 5CSEMA5F31C6                                       ;
+; Timing Models      ; Preliminary                                        ;
+; Delay Model        ; Combined                                           ;
+; Rise/Fall Delays   ; Enabled                                            ;
++--------------------+----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.50        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  50.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                               ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; Clock Name                ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                       ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+; ADC:system_1|clk          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ADC:system_1|clk }          ;
+; clock                     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock }                     ;
+; frequency:system_3|clk_en ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { frequency:system_3|clk_en } ;
+; vga:comb_3|clk_25[0]      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { vga:comb_3|clk_25[0] }      ;
++---------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------------+
+
+
++-----------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                              ;
++------------+-----------------+---------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                ; Note ;
++------------+-----------------+---------------------------+------+
+; 13.45 MHz  ; 13.45 MHz       ; frequency:system_3|clk_en ;      ;
+; 148.72 MHz ; 148.72 MHz      ; vga:comb_3|clk_25[0]      ;      ;
+; 204.08 MHz ; 204.08 MHz      ; clock                     ;      ;
+; 398.41 MHz ; 398.41 MHz      ; ADC:system_1|clk          ;      ;
++------------+-----------------+---------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-----------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary                 ;
++---------------------------+---------+---------------+
+; Clock                     ; Slack   ; End Point TNS ;
++---------------------------+---------+---------------+
+; frequency:system_3|clk_en ; -73.341 ; -1022.778     ;
+; vga:comb_3|clk_25[0]      ; -20.983 ; -293.874      ;
+; clock                     ; -3.900  ; -395.121      ;
+; ADC:system_1|clk          ; -1.510  ; -57.059       ;
++---------------------------+---------+---------------+
+
+
++----------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                 ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clock                     ; -1.422 ; -7.911        ;
+; frequency:system_3|clk_en ; 0.043  ; 0.000         ;
+; vga:comb_3|clk_25[0]      ; 0.229  ; 0.000         ;
+; ADC:system_1|clk          ; 0.232  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
+------------------------------------------
+; Slow 1100mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1100mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Slow 1100mV 85C Model Minimum Pulse Width Summary  ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clock                     ; -2.225 ; -118.514      ;
+; frequency:system_3|clk_en ; -0.500 ; -41.602       ;
+; vga:comb_3|clk_25[0]      ; -0.394 ; -32.592       ;
+; ADC:system_1|clk          ; -0.394 ; -27.216       ;
++---------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++-----------+------------------+-------+-------+------------+------------------+
+; Data Port ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
++-----------+------------------+-------+-------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; 3.704 ; 4.236 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; 5.008 ; 5.502 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+-------+-------+------------+------------------+
+
+
++--------------------------------------------------------------------------------+
+; Hold Times                                                                     ;
++-----------+------------------+--------+--------+------------+------------------+
+; Data Port ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++-----------+------------------+--------+--------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; -2.817 ; -3.281 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; -2.707 ; -3.038 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+--------+--------+------------+------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                  ;
++------------+----------------------+-------+--------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall   ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+--------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 8.226 ; 7.438  ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 8.288 ; 9.379  ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 8.563 ; 7.661  ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 7.552 ; 8.451  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 7.527 ; 8.429  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 7.552 ; 8.451  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 6.159 ; 6.619  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 6.611 ; 6.989  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 7.090 ; 7.493  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 6.436 ; 6.824  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 7.176 ; 7.513  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 7.330 ; 8.313  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 8.792 ; 10.243 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 6.860 ; 7.415  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 6.911 ; 7.499  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 8.792 ; 10.243 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 6.377 ; 6.683  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 7.423 ; 8.271  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 7.639 ; 8.364  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 8.529 ; 9.747  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 8.266 ; 9.370  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 9.779 ; 8.782  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 5.463 ;        ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 8.367 ; 7.361  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 9.544 ; 8.464  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 8.635 ; 7.603  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 5.968  ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+--------+------------+----------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++------------+----------------------+-------+-------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+-------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 7.477 ; 6.774 ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 7.512 ; 8.471 ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 7.770 ; 6.972 ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 5.616 ; 6.018 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 6.866 ; 7.652 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 6.889 ; 7.676 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 5.616 ; 6.018 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 6.023 ; 6.348 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 6.413 ; 6.751 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 5.859 ; 6.177 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 6.504 ; 6.798 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 6.677 ; 7.549 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 5.780 ; 6.055 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 6.187 ; 6.621 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 6.239 ; 6.733 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 7.958 ; 9.221 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 5.780 ; 6.055 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 6.756 ; 7.535 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 6.922 ; 7.551 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 7.706 ; 8.767 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 7.491 ; 8.457 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 8.386 ; 7.419 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 5.107 ;       ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 7.587 ; 6.713 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 8.175 ; 7.134 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 7.822 ; 6.907 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 5.546 ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+-------+------------+----------------------+
+
+
+----------------------------------------------
+; Slow 1100mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                               ;
++------------+-----------------+---------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                ; Note ;
++------------+-----------------+---------------------------+------+
+; 12.97 MHz  ; 12.97 MHz       ; frequency:system_3|clk_en ;      ;
+; 149.54 MHz ; 149.54 MHz      ; vga:comb_3|clk_25[0]      ;      ;
+; 204.62 MHz ; 204.62 MHz      ; clock                     ;      ;
+; 410.17 MHz ; 410.17 MHz      ; ADC:system_1|clk          ;      ;
++------------+-----------------+---------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary                  ;
++---------------------------+---------+---------------+
+; Clock                     ; Slack   ; End Point TNS ;
++---------------------------+---------+---------------+
+; frequency:system_3|clk_en ; -76.110 ; -1059.273     ;
+; vga:comb_3|clk_25[0]      ; -21.795 ; -301.584      ;
+; clock                     ; -3.887  ; -384.602      ;
+; ADC:system_1|clk          ; -1.438  ; -52.458       ;
++---------------------------+---------+---------------+
+
+
++----------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                  ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clock                     ; -1.198 ; -12.647       ;
+; frequency:system_3|clk_en ; 0.070  ; 0.000         ;
+; ADC:system_1|clk          ; 0.194  ; 0.000         ;
+; vga:comb_3|clk_25[0]      ; 0.211  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
+-----------------------------------------
+; Slow 1100mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1100mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Slow 1100mV 0C Model Minimum Pulse Width Summary   ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clock                     ; -2.225 ; -125.590      ;
+; frequency:system_3|clk_en ; -0.524 ; -42.505       ;
+; vga:comb_3|clk_25[0]      ; -0.394 ; -32.552       ;
+; ADC:system_1|clk          ; -0.394 ; -27.050       ;
++---------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++-----------+------------------+-------+-------+------------+------------------+
+; Data Port ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
++-----------+------------------+-------+-------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; 3.620 ; 4.192 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; 4.817 ; 5.334 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+-------+-------+------------+------------------+
+
+
++--------------------------------------------------------------------------------+
+; Hold Times                                                                     ;
++-----------+------------------+--------+--------+------------+------------------+
+; Data Port ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++-----------+------------------+--------+--------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; -2.746 ; -3.216 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; -2.520 ; -2.887 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+--------+--------+------------+------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                  ;
++------------+----------------------+-------+--------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall   ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+--------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 8.003 ; 7.133  ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 8.044 ; 9.227  ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 8.337 ; 7.353  ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 7.280 ; 8.257  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 7.245 ; 8.240  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 7.280 ; 8.257  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 5.791 ; 6.273  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 6.202 ; 6.645  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 6.660 ; 7.122  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 6.042 ; 6.479  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 6.771 ; 7.153  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 7.085 ; 8.149  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 8.664 ; 10.147 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 6.491 ; 7.091  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 6.570 ; 7.178  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 8.664 ; 10.147 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 6.034 ; 6.370  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 7.185 ; 8.108  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 7.364 ; 8.153  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 8.316 ; 9.613  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 8.044 ; 9.183  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 9.581 ; 8.464  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 5.153 ;        ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 8.200 ; 7.106  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 9.366 ; 8.177  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 8.461 ; 7.371  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 5.720  ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+--------+------------+----------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++------------+----------------------+-------+-------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+-------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 7.239 ; 6.479 ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 7.273 ; 8.303 ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 7.528 ; 6.676 ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 5.268 ; 5.666 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 6.593 ; 7.453 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 6.626 ; 7.471 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 5.268 ; 5.666 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 5.639 ; 6.004 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 6.011 ; 6.390 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 5.489 ; 5.840 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 6.124 ; 6.439 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 6.441 ; 7.365 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 5.455 ; 5.735 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 5.837 ; 6.309 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 5.918 ; 6.415 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 7.826 ; 9.101 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 5.455 ; 5.735 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 6.521 ; 7.345 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 6.655 ; 7.333 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 7.501 ; 8.616 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 7.274 ; 8.251 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 8.168 ; 7.100 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 4.812 ;       ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 7.409 ; 6.462 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 7.978 ; 6.842 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 7.631 ; 6.683 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 5.281 ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+-------+------------+----------------------+
+
+
+---------------------------------------------
+; Slow 1100mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary                 ;
++---------------------------+---------+---------------+
+; Clock                     ; Slack   ; End Point TNS ;
++---------------------------+---------+---------------+
+; frequency:system_3|clk_en ; -39.894 ; -556.416      ;
+; vga:comb_3|clk_25[0]      ; -10.865 ; -155.479      ;
+; clock                     ; -2.071  ; -186.756      ;
+; ADC:system_1|clk          ; -0.636  ; -19.422       ;
++---------------------------+---------+---------------+
+
+
++----------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                 ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clock                     ; -0.527 ; -9.263        ;
+; frequency:system_3|clk_en ; -0.205 ; -0.492        ;
+; vga:comb_3|clk_25[0]      ; 0.047  ; 0.000         ;
+; ADC:system_1|clk          ; 0.059  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
+------------------------------------------
+; Fast 1100mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Fast 1100mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Fast 1100mV 85C Model Minimum Pulse Width Summary  ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clock                     ; -1.702 ; -53.058       ;
+; frequency:system_3|clk_en ; -0.245 ; -4.589        ;
+; vga:comb_3|clk_25[0]      ; -0.036 ; -0.707        ;
+; ADC:system_1|clk          ; 0.015  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++-----------+------------------+-------+-------+------------+------------------+
+; Data Port ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
++-----------+------------------+-------+-------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; 2.130 ; 2.883 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; 2.835 ; 3.637 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+-------+-------+------------+------------------+
+
+
++--------------------------------------------------------------------------------+
+; Hold Times                                                                     ;
++-----------+------------------+--------+--------+------------+------------------+
+; Data Port ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++-----------+------------------+--------+--------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; -1.630 ; -2.330 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; -1.488 ; -2.100 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+--------+--------+------------+------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                 ;
++------------+----------------------+-------+-------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+-------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 5.445 ; 4.677 ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 5.335 ; 6.391 ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 5.725 ; 4.846 ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 4.833 ; 5.764 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 4.831 ; 5.739 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 4.833 ; 5.764 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 3.801 ; 4.230 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 4.034 ; 4.497 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 4.310 ; 4.742 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 3.967 ; 4.411 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 4.403 ; 4.804 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 4.737 ; 5.689 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 5.832 ; 7.180 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 4.246 ; 4.768 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 4.287 ; 4.864 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 5.832 ; 7.180 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 3.954 ; 4.265 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 4.781 ; 5.600 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 4.872 ; 5.594 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 5.549 ; 6.732 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 5.338 ; 6.406 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 6.507 ; 5.520 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 3.395 ;       ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 5.702 ; 4.744 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 6.340 ; 5.318 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 5.906 ; 4.910 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 3.895 ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+-------+------------+----------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++------------+----------------------+-------+-------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+-------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 4.976 ; 4.275 ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 4.862 ; 5.810 ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 5.221 ; 4.426 ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 3.476 ; 3.860 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 4.428 ; 5.242 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 4.429 ; 5.267 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 3.476 ; 3.860 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 3.687 ; 4.102 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 3.915 ; 4.296 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 3.622 ; 4.007 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 4.005 ; 4.367 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 4.336 ; 5.196 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 3.593 ; 3.880 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 3.837 ; 4.270 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 3.880 ; 4.383 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 5.307 ; 6.507 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 3.593 ; 3.880 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 4.365 ; 5.128 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 4.432 ; 5.077 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 5.038 ; 6.093 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 4.861 ; 5.822 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 5.646 ; 4.723 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 3.220 ;       ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 5.197 ; 4.343 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 5.489 ; 4.535 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 5.381 ; 4.480 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 3.669 ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+-------+------------+----------------------+
+
+
+----------------------------------------------
+; Fast 1100mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary                  ;
++---------------------------+---------+---------------+
+; Clock                     ; Slack   ; End Point TNS ;
++---------------------------+---------+---------------+
+; frequency:system_3|clk_en ; -38.339 ; -531.389      ;
+; vga:comb_3|clk_25[0]      ; -10.331 ; -145.370      ;
+; clock                     ; -1.852  ; -161.763      ;
+; ADC:system_1|clk          ; -0.559  ; -15.795       ;
++---------------------------+---------+---------------+
+
+
++----------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                  ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clock                     ; -0.601 ; -12.369       ;
+; frequency:system_3|clk_en ; -0.221 ; -0.948        ;
+; vga:comb_3|clk_25[0]      ; 0.028  ; 0.000         ;
+; ADC:system_1|clk          ; 0.032  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
+-----------------------------------------
+; Fast 1100mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1100mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Fast 1100mV 0C Model Minimum Pulse Width Summary   ;
++---------------------------+--------+---------------+
+; Clock                     ; Slack  ; End Point TNS ;
++---------------------------+--------+---------------+
+; clock                     ; -1.702 ; -53.064       ;
+; frequency:system_3|clk_en ; -0.188 ; -2.858        ;
+; vga:comb_3|clk_25[0]      ; -0.008 ; -0.008        ;
+; ADC:system_1|clk          ; 0.038  ; 0.000         ;
++---------------------------+--------+---------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++-----------+------------------+-------+-------+------------+------------------+
+; Data Port ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
++-----------+------------------+-------+-------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; 2.033 ; 2.775 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; 2.648 ; 3.417 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+-------+-------+------------+------------------+
+
+
++--------------------------------------------------------------------------------+
+; Hold Times                                                                     ;
++-----------+------------------+--------+--------+------------+------------------+
+; Data Port ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++-----------+------------------+--------+--------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; -1.556 ; -2.232 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; -1.351 ; -1.965 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+--------+--------+------------+------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                 ;
++------------+----------------------+-------+-------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+-------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 5.023 ; 4.383 ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 5.039 ; 5.919 ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 5.278 ; 4.550 ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 4.513 ; 5.314 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 4.513 ; 5.297 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 4.513 ; 5.314 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 3.431 ; 3.809 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 3.624 ; 4.062 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 3.883 ; 4.284 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 3.576 ; 3.984 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 3.988 ; 4.355 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 4.445 ; 5.252 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 5.559 ; 6.690 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 3.899 ; 4.336 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 3.923 ; 4.426 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 5.559 ; 6.690 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 3.607 ; 3.882 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 4.538 ; 5.203 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 4.546 ; 5.161 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 5.237 ; 6.252 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 5.010 ; 5.931 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 6.012 ; 5.149 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 3.109 ;       ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 5.270 ; 4.479 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 5.872 ; 5.022 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 5.461 ; 4.614 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 3.536 ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+-------+------------+----------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++------------+----------------------+-------+-------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+-------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 4.563 ; 3.996 ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 4.583 ; 5.359 ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 4.787 ; 4.148 ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 3.126 ; 3.448 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 4.123 ; 4.816 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 4.124 ; 4.834 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 3.126 ; 3.448 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 3.300 ; 3.682 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 3.517 ; 3.860 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 3.252 ; 3.600 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 3.615 ; 3.935 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 4.058 ; 4.771 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 3.265 ; 3.503 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 3.512 ; 3.864 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 3.538 ; 3.967 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 5.049 ; 6.039 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 3.265 ; 3.503 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 4.135 ; 4.732 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 4.123 ; 4.662 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 4.746 ; 5.638 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 4.550 ; 5.361 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 5.182 ; 4.385 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 2.950 ;       ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 4.783 ; 4.090 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 5.052 ; 4.269 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 4.951 ; 4.200 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 3.312 ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+-------+------------+----------------------+
+
+
+---------------------------------------------
+; Fast 1100mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++---------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                         ;
++----------------------------+-----------+---------+----------+---------+---------------------+
+; Clock                      ; Setup     ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------------+-----------+---------+----------+---------+---------------------+
+; Worst-case Slack           ; -76.110   ; -1.422  ; N/A      ; N/A     ; -2.225              ;
+;  ADC:system_1|clk          ; -1.510    ; 0.032   ; N/A      ; N/A     ; -0.394              ;
+;  clock                     ; -3.900    ; -1.422  ; N/A      ; N/A     ; -2.225              ;
+;  frequency:system_3|clk_en ; -76.110   ; -0.221  ; N/A      ; N/A     ; -0.524              ;
+;  vga:comb_3|clk_25[0]      ; -21.795   ; 0.028   ; N/A      ; N/A     ; -0.394              ;
+; Design-wide TNS            ; -1797.917 ; -13.317 ; 0.0      ; 0.0     ; -227.697            ;
+;  ADC:system_1|clk          ; -57.059   ; 0.000   ; N/A      ; N/A     ; -27.216             ;
+;  clock                     ; -395.121  ; -12.647 ; N/A      ; N/A     ; -125.590            ;
+;  frequency:system_3|clk_en ; -1059.273 ; -0.948  ; N/A      ; N/A     ; -42.505             ;
+;  vga:comb_3|clk_25[0]      ; -301.584  ; 0.000   ; N/A      ; N/A     ; -32.592             ;
++----------------------------+-----------+---------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++-----------+------------------+-------+-------+------------+------------------+
+; Data Port ; Clock Port       ; Rise  ; Fall  ; Clock Edge ; Clock Reference  ;
++-----------+------------------+-------+-------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; 3.704 ; 4.236 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; 5.008 ; 5.502 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+-------+-------+------------+------------------+
+
+
++--------------------------------------------------------------------------------+
+; Hold Times                                                                     ;
++-----------+------------------+--------+--------+------------+------------------+
+; Data Port ; Clock Port       ; Rise   ; Fall   ; Clock Edge ; Clock Reference  ;
++-----------+------------------+--------+--------+------------+------------------+
+; ADC_DOUT  ; ADC:system_1|clk ; -1.556 ; -2.232 ; Rise       ; ADC:system_1|clk ;
+; reset     ; ADC:system_1|clk ; -1.351 ; -1.965 ; Rise       ; ADC:system_1|clk ;
++-----------+------------------+--------+--------+------------+------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                  ;
++------------+----------------------+-------+--------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall   ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+--------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 8.226 ; 7.438  ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 8.288 ; 9.379  ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 8.563 ; 7.661  ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 7.552 ; 8.451  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 7.527 ; 8.429  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 7.552 ; 8.451  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 6.159 ; 6.619  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 6.611 ; 6.989  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 7.090 ; 7.493  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 6.436 ; 6.824  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 7.176 ; 7.513  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 7.330 ; 8.313  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 8.792 ; 10.243 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 6.860 ; 7.415  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 6.911 ; 7.499  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 8.792 ; 10.243 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 6.377 ; 6.683  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 7.423 ; 8.271  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 7.639 ; 8.364  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 8.529 ; 9.747  ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 8.266 ; 9.370  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 9.779 ; 8.782  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 5.463 ;        ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 8.367 ; 7.361  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 9.544 ; 8.464  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 8.635 ; 7.603  ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 5.968  ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+--------+------------+----------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++------------+----------------------+-------+-------+------------+----------------------+
+; Data Port  ; Clock Port           ; Rise  ; Fall  ; Clock Edge ; Clock Reference      ;
++------------+----------------------+-------+-------+------------+----------------------+
+; ADC_CS_N   ; ADC:system_1|clk     ; 4.563 ; 3.996 ; Rise       ; ADC:system_1|clk     ;
+; ADC_DIN    ; ADC:system_1|clk     ; 4.583 ; 5.359 ; Rise       ; ADC:system_1|clk     ;
+; ADC_SCLK   ; ADC:system_1|clk     ; 4.787 ; 4.148 ; Rise       ; ADC:system_1|clk     ;
+; vga_G[*]   ; vga:comb_3|clk_25[0] ; 3.126 ; 3.448 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[0]  ; vga:comb_3|clk_25[0] ; 4.123 ; 4.816 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[1]  ; vga:comb_3|clk_25[0] ; 4.124 ; 4.834 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[2]  ; vga:comb_3|clk_25[0] ; 3.126 ; 3.448 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[3]  ; vga:comb_3|clk_25[0] ; 3.300 ; 3.682 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[4]  ; vga:comb_3|clk_25[0] ; 3.517 ; 3.860 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[5]  ; vga:comb_3|clk_25[0] ; 3.252 ; 3.600 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[6]  ; vga:comb_3|clk_25[0] ; 3.615 ; 3.935 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_G[7]  ; vga:comb_3|clk_25[0] ; 4.058 ; 4.771 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_R[*]   ; vga:comb_3|clk_25[0] ; 3.265 ; 3.503 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[0]  ; vga:comb_3|clk_25[0] ; 3.512 ; 3.864 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[1]  ; vga:comb_3|clk_25[0] ; 3.538 ; 3.967 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[2]  ; vga:comb_3|clk_25[0] ; 5.049 ; 6.039 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[3]  ; vga:comb_3|clk_25[0] ; 3.265 ; 3.503 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[4]  ; vga:comb_3|clk_25[0] ; 4.135 ; 4.732 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[5]  ; vga:comb_3|clk_25[0] ; 4.123 ; 4.662 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[6]  ; vga:comb_3|clk_25[0] ; 4.746 ; 5.638 ; Rise       ; vga:comb_3|clk_25[0] ;
+;  vga_R[7]  ; vga:comb_3|clk_25[0] ; 4.550 ; 5.361 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_blank  ; vga:comb_3|clk_25[0] ; 5.182 ; 4.385 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ; 2.950 ;       ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_h_sync ; vga:comb_3|clk_25[0] ; 4.783 ; 4.090 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_sync   ; vga:comb_3|clk_25[0] ; 5.052 ; 4.269 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_v_sync ; vga:comb_3|clk_25[0] ; 4.951 ; 4.200 ; Rise       ; vga:comb_3|clk_25[0] ;
+; vga_clk    ; vga:comb_3|clk_25[0] ;       ; 3.312 ; Fall       ; vga:comb_3|clk_25[0] ;
++------------+----------------------+-------+-------+------------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                 ;
++------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin        ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; ADC_CS_N   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ADC_DIN    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ADC_SCLK   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_R[0]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_R[1]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_R[2]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_R[3]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_R[4]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_R[5]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_R[6]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_R[7]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_G[0]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_G[1]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_G[2]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_G[3]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_G[4]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_G[5]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_G[6]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_G[7]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_B[0]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_B[1]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_B[2]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_B[3]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_B[4]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_B[5]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_B[6]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_B[7]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_clk    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_blank  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_sync   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_h_sync ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; vga_v_sync ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++-------------------------------------------------------------+
+; Input Transition Times                                      ;
++----------+--------------+-----------------+-----------------+
+; Pin      ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++----------+--------------+-----------------+-----------------+
+; reset    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clock    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ADC_DOUT ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++----------+--------------+-----------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin        ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; ADC_CS_N   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; ADC_DIN    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0557 V           ; 0.175 V                              ; 0.114 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0557 V          ; 0.175 V                             ; 0.114 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; ADC_SCLK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; vga_R[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0557 V           ; 0.175 V                              ; 0.114 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0557 V          ; 0.175 V                             ; 0.114 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; vga_R[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_R[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_R[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_R[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; vga_R[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_R[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_R[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_G[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_G[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_G[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_G[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_G[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_G[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_G[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_G[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_B[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; vga_B[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_B[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_B[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_B[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_B[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
+; vga_B[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_B[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_clk    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; vga_blank  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; vga_sync   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; vga_h_sync ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0557 V           ; 0.175 V                              ; 0.114 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0557 V          ; 0.175 V                             ; 0.114 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
+; vga_v_sync ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin        ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; ADC_CS_N   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; ADC_DIN    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.037 V            ; 0.188 V                              ; 0.158 V                              ; 4.67e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.037 V           ; 0.188 V                             ; 0.158 V                             ; 4.67e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; ADC_SCLK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; vga_R[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.037 V            ; 0.188 V                              ; 0.158 V                              ; 4.67e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.037 V           ; 0.188 V                             ; 0.158 V                             ; 4.67e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; vga_R[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_R[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_R[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_R[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; vga_R[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_R[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_R[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_G[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_G[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_G[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_G[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_G[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_G[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_G[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_G[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_B[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; vga_B[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_B[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_B[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_B[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_B[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
+; vga_B[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_B[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_clk    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; vga_blank  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; vga_sync   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; vga_h_sync ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.037 V            ; 0.188 V                              ; 0.158 V                              ; 4.67e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.037 V           ; 0.188 V                             ; 0.158 V                             ; 4.67e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
+; vga_v_sync ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin        ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; ADC_CS_N   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; ADC_DIN    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; ADC_SCLK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; vga_R[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; vga_R[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_R[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_R[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_R[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; vga_R[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_R[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_R[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_G[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_G[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_G[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_G[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_G[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_G[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_G[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_G[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_B[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; vga_B[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_B[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_B[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_B[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_B[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
+; vga_B[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_B[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_clk    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; vga_blank  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; vga_sync   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; vga_h_sync ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; vga_v_sync ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin        ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; ADC_CS_N   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; ADC_DIN    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; ADC_SCLK   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; vga_R[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; vga_R[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_R[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_R[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_R[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; vga_R[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_R[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_R[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_G[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_G[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_G[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_G[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_G[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_G[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_G[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_G[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_B[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; vga_B[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_B[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_B[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_B[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_B[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
+; vga_B[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_B[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_clk    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; vga_blank  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; vga_sync   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; vga_h_sync ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; vga_v_sync ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
++------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                       ;
++---------------------------+---------------------------+--------------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+--------------+----------+----------+----------+
+; ADC:system_1|clk          ; ADC:system_1|clk          ; 121          ; 0        ; 0        ; 0        ;
+; ADC:system_1|clk          ; clock                     ; 360          ; 0        ; 0        ; 0        ;
+; clock                     ; clock                     ; 7389         ; 0        ; 0        ; 0        ;
+; vga:comb_3|clk_25[0]      ; clock                     ; 1            ; 1        ; 0        ; 0        ;
+; ADC:system_1|clk          ; frequency:system_3|clk_en ; 1128         ; 0        ; 0        ; 0        ;
+; frequency:system_3|clk_en ; frequency:system_3|clk_en ; > 2147483647 ; 0        ; 0        ; 0        ;
+; clock                     ; vga:comb_3|clk_25[0]      ; 178608       ; 0        ; 0        ; 0        ;
+; frequency:system_3|clk_en ; vga:comb_3|clk_25[0]      ; > 2147483647 ; 0        ; 0        ; 0        ;
+; vga:comb_3|clk_25[0]      ; vga:comb_3|clk_25[0]      ; 8360         ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                        ;
++---------------------------+---------------------------+--------------+----------+----------+----------+
+; From Clock                ; To Clock                  ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------+---------------------------+--------------+----------+----------+----------+
+; ADC:system_1|clk          ; ADC:system_1|clk          ; 121          ; 0        ; 0        ; 0        ;
+; ADC:system_1|clk          ; clock                     ; 360          ; 0        ; 0        ; 0        ;
+; clock                     ; clock                     ; 7389         ; 0        ; 0        ; 0        ;
+; vga:comb_3|clk_25[0]      ; clock                     ; 1            ; 1        ; 0        ; 0        ;
+; ADC:system_1|clk          ; frequency:system_3|clk_en ; 1128         ; 0        ; 0        ; 0        ;
+; frequency:system_3|clk_en ; frequency:system_3|clk_en ; > 2147483647 ; 0        ; 0        ; 0        ;
+; clock                     ; vga:comb_3|clk_25[0]      ; 178608       ; 0        ; 0        ; 0        ;
+; frequency:system_3|clk_en ; vga:comb_3|clk_25[0]      ; > 2147483647 ; 0        ; 0        ; 0        ;
+; vga:comb_3|clk_25[0]      ; vga:comb_3|clk_25[0]      ; 8360         ; 0        ; 0        ; 0        ;
++---------------------------+---------------------------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 51    ; 51   ;
+; Unconstrained Output Ports      ; 24    ; 24   ;
+; Unconstrained Output Port Paths ; 26    ; 26   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Jun 04 07:34:14 2018
+Info: Command: quartus_sta adc_to_vga -c adc_to_vga
+Info: qsta_default_script.tcl version: #1
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'adc_to_vga.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name ADC:system_1|clk ADC:system_1|clk
+    Info (332105): create_clock -period 1.000 -name clock clock
+    Info (332105): create_clock -period 1.000 -name vga:comb_3|clk_25[0] vga:comb_3|clk_25[0]
+    Info (332105): create_clock -period 1.000 -name frequency:system_3|clk_en frequency:system_3|clk_en
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1100mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -73.341
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -73.341           -1022.778 frequency:system_3|clk_en 
+    Info (332119):   -20.983            -293.874 vga:comb_3|clk_25[0] 
+    Info (332119):    -3.900            -395.121 clock 
+    Info (332119):    -1.510             -57.059 ADC:system_1|clk 
+Info (332146): Worst-case hold slack is -1.422
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.422              -7.911 clock 
+    Info (332119):     0.043               0.000 frequency:system_3|clk_en 
+    Info (332119):     0.229               0.000 vga:comb_3|clk_25[0] 
+    Info (332119):     0.232               0.000 ADC:system_1|clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.225
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.225            -118.514 clock 
+    Info (332119):    -0.500             -41.602 frequency:system_3|clk_en 
+    Info (332119):    -0.394             -32.592 vga:comb_3|clk_25[0] 
+    Info (332119):    -0.394             -27.216 ADC:system_1|clk 
+Info: Analyzing Slow 1100mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -76.110
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -76.110           -1059.273 frequency:system_3|clk_en 
+    Info (332119):   -21.795            -301.584 vga:comb_3|clk_25[0] 
+    Info (332119):    -3.887            -384.602 clock 
+    Info (332119):    -1.438             -52.458 ADC:system_1|clk 
+Info (332146): Worst-case hold slack is -1.198
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.198             -12.647 clock 
+    Info (332119):     0.070               0.000 frequency:system_3|clk_en 
+    Info (332119):     0.194               0.000 ADC:system_1|clk 
+    Info (332119):     0.211               0.000 vga:comb_3|clk_25[0] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.225
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.225            -125.590 clock 
+    Info (332119):    -0.524             -42.505 frequency:system_3|clk_en 
+    Info (332119):    -0.394             -32.552 vga:comb_3|clk_25[0] 
+    Info (332119):    -0.394             -27.050 ADC:system_1|clk 
+Info: Analyzing Fast 1100mV 85C Model
+Info (334003): Started post-fitting delay annotation
+Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -39.894
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -39.894            -556.416 frequency:system_3|clk_en 
+    Info (332119):   -10.865            -155.479 vga:comb_3|clk_25[0] 
+    Info (332119):    -2.071            -186.756 clock 
+    Info (332119):    -0.636             -19.422 ADC:system_1|clk 
+Info (332146): Worst-case hold slack is -0.527
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.527              -9.263 clock 
+    Info (332119):    -0.205              -0.492 frequency:system_3|clk_en 
+    Info (332119):     0.047               0.000 vga:comb_3|clk_25[0] 
+    Info (332119):     0.059               0.000 ADC:system_1|clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.702
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.702             -53.058 clock 
+    Info (332119):    -0.245              -4.589 frequency:system_3|clk_en 
+    Info (332119):    -0.036              -0.707 vga:comb_3|clk_25[0] 
+    Info (332119):     0.015               0.000 ADC:system_1|clk 
+Info: Analyzing Fast 1100mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -38.339
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -38.339            -531.389 frequency:system_3|clk_en 
+    Info (332119):   -10.331            -145.370 vga:comb_3|clk_25[0] 
+    Info (332119):    -1.852            -161.763 clock 
+    Info (332119):    -0.559             -15.795 ADC:system_1|clk 
+Info (332146): Worst-case hold slack is -0.601
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.601             -12.369 clock 
+    Info (332119):    -0.221              -0.948 frequency:system_3|clk_en 
+    Info (332119):     0.028               0.000 vga:comb_3|clk_25[0] 
+    Info (332119):     0.032               0.000 ADC:system_1|clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.702
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.702             -53.064 clock 
+    Info (332119):    -0.188              -2.858 frequency:system_3|clk_en 
+    Info (332119):    -0.008              -0.008 vga:comb_3|clk_25[0] 
+    Info (332119):     0.038               0.000 ADC:system_1|clk 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 932 megabytes
+    Info: Processing ended: Mon Jun 04 07:34:29 2018
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:20
+
+

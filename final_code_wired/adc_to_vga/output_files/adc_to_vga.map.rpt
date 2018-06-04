@@ -1,0 +1,1017 @@
+Analysis & Synthesis report for adc_to_vga
+Mon Jun 04 07:32:36 2018
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |adc_to_vga|frequency:system_3|mode
+ 10. State Machine - |adc_to_vga|ADC:system_1|state
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: ADC:system_1
+ 17. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod0
+ 19. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div1
+ 20. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod1
+ 21. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div4
+ 22. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div3
+ 23. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod4
+ 24. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div2
+ 25. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod3
+ 26. Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod2
+ 27. Parameter Settings for Inferred Entity Instance: frequency:system_3|lpm_divide:Div0
+ 28. Port Connectivity Checks: "vga:comb_3|hvsync_generator:comb_331"
+ 29. Port Connectivity Checks: "vga:comb_3"
+ 30. Port Connectivity Checks: "frequency:system_3"
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++---------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Jun 04 07:32:36 2018      ;
+; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                   ; adc_to_vga                                 ;
+; Top-level Entity Name           ; adc_to_vga                                 ;
+; Family                          ; Cyclone V                                  ;
+; Logic utilization (in ALMs)     ; N/A                                        ;
+; Total registers                 ; 296                                        ;
+; Total pins                      ; 35                                         ;
+; Total virtual pins              ; 0                                          ;
+; Total block memory bits         ; 0                                          ;
+; Total DSP Blocks                ; 2                                          ;
+; Total HSSI RX PCSs              ; 0                                          ;
+; Total HSSI PMA RX Deserializers ; 0                                          ;
+; Total HSSI TX PCSs              ; 0                                          ;
+; Total HSSI TX Channels          ; 0                                          ;
+; Total PLLs                      ; 0                                          ;
+; Total DLLs                      ; 0                                          ;
++---------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; adc_to_vga         ; adc_to_vga         ;
+; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                                    ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+; ADC.v                            ; yes             ; User Verilog HDL File        ; C:/Users/nailt/Desktop/nail/adc_to_vga/ADC.v                       ;         ;
+; magnitude.v                      ; yes             ; User Verilog HDL File        ; C:/Users/nailt/Desktop/nail/adc_to_vga/magnitude.v                 ;         ;
+; adc_to_vga.v                     ; yes             ; User Verilog HDL File        ; C:/Users/nailt/Desktop/nail/adc_to_vga/adc_to_vga.v                ;         ;
+; frequency.v                      ; yes             ; User Verilog HDL File        ; C:/Users/nailt/Desktop/nail/adc_to_vga/frequency.v                 ;         ;
+; hvsync_generator.v               ; yes             ; User Verilog HDL File        ; C:/Users/nailt/Desktop/nail/adc_to_vga/hvsync_generator.v          ;         ;
+; vga.v                            ; yes             ; User Verilog HDL File        ; C:/Users/nailt/Desktop/nail/adc_to_vga/vga.v                       ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc      ;         ;
+; db/lpm_divide_3am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/lpm_divide_3am.tdf       ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/sign_div_unsign_9kh.tdf  ;         ;
+; db/alt_u_div_ose.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/alt_u_div_ose.tdf        ;         ;
+; db/lpm_divide_62m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/lpm_divide_62m.tdf       ;         ;
+; db/lpm_divide_tcm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/lpm_divide_tcm.tdf       ;         ;
+; db/sign_div_unsign_3nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/sign_div_unsign_3nh.tdf  ;         ;
+; db/alt_u_div_c2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/alt_u_div_c2f.tdf        ;         ;
+; db/lpm_divide_jbm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/lpm_divide_jbm.tdf       ;         ;
+; db/sign_div_unsign_plh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/sign_div_unsign_plh.tdf  ;         ;
+; db/alt_u_div_ove.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/alt_u_div_ove.tdf        ;         ;
+; db/lpm_divide_j3m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/lpm_divide_j3m.tdf       ;         ;
+; db/sign_div_unsign_mlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/sign_div_unsign_mlh.tdf  ;         ;
+; db/alt_u_div_ive.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/alt_u_div_ive.tdf        ;         ;
+; db/lpm_divide_gbm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/lpm_divide_gbm.tdf       ;         ;
+; db/lpm_divide_rqo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/lpm_divide_rqo.tdf       ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/abs_divider_4dg.tdf      ;         ;
+; db/alt_u_div_o2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/alt_u_div_o2f.tdf        ;         ;
+; db/lpm_abs_4p9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/nailt/Desktop/nail/adc_to_vga/db/lpm_abs_4p9.tdf          ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 1140        ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 2169        ;
+;     -- 7 input functions                    ; 3           ;
+;     -- 6 input functions                    ; 99          ;
+;     -- 5 input functions                    ; 575         ;
+;     -- 4 input functions                    ; 519         ;
+;     -- <=3 input functions                  ; 973         ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 296         ;
+;                                             ;             ;
+; I/O pins                                    ; 35          ;
+; Total DSP Blocks                            ; 2           ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 147         ;
+; Total fan-out                               ; 9312        ;
+; Average fan-out                             ; 3.67        ;
++---------------------------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                              ;
++-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
+; |adc_to_vga                               ; 2169 (0)          ; 296 (0)      ; 0                 ; 2          ; 35   ; 0            ; |adc_to_vga                                                                                                                 ; work         ;
+;    |ADC:system_1|                         ; 57 (57)           ; 83 (83)      ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|ADC:system_1                                                                                                    ; work         ;
+;    |frequency:system_3|                   ; 1221 (80)         ; 92 (92)      ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|frequency:system_3                                                                                              ; work         ;
+;       |lpm_divide:Div0|                   ; 1141 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|frequency:system_3|lpm_divide:Div0                                                                              ; work         ;
+;          |lpm_divide_rqo:auto_generated|  ; 1141 (0)          ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|frequency:system_3|lpm_divide:Div0|lpm_divide_rqo:auto_generated                                                ; work         ;
+;             |abs_divider_4dg:divider|     ; 1141 (12)         ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|frequency:system_3|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider                        ; work         ;
+;                |alt_u_div_o2f:divider|    ; 1097 (1097)       ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|frequency:system_3|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|alt_u_div_o2f:divider  ; work         ;
+;                |lpm_abs_4p9:my_abs_den|   ; 32 (32)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|frequency:system_3|lpm_divide:Div0|lpm_divide_rqo:auto_generated|abs_divider_4dg:divider|lpm_abs_4p9:my_abs_den ; work         ;
+;    |magnitude:system_2|                   ; 100 (100)         ; 80 (80)      ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|magnitude:system_2                                                                                              ; work         ;
+;    |vga:comb_3|                           ; 791 (171)         ; 41 (19)      ; 0                 ; 2          ; 0    ; 0            ; |adc_to_vga|vga:comb_3                                                                                                      ; work         ;
+;       |hvsync_generator:comb_331|         ; 24 (24)           ; 22 (22)      ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|hvsync_generator:comb_331                                                                            ; work         ;
+;       |lpm_divide:Div0|                   ; 27 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div0                                                                                      ; work         ;
+;          |lpm_divide_3am:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div0|lpm_divide_3am:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 27 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div0|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider                            ; work         ;
+;                |alt_u_div_ose:divider|    ; 27 (27)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div0|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider      ; work         ;
+;       |lpm_divide:Div1|                   ; 27 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div1                                                                                      ; work         ;
+;          |lpm_divide_3am:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div1|lpm_divide_3am:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 27 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div1|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider                            ; work         ;
+;                |alt_u_div_ose:divider|    ; 27 (27)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div1|lpm_divide_3am:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider      ; work         ;
+;       |lpm_divide:Div2|                   ; 93 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div2                                                                                      ; work         ;
+;          |lpm_divide_gbm:auto_generated|  ; 93 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div2|lpm_divide_gbm:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 93 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div2|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                            ; work         ;
+;                |alt_u_div_ive:divider|    ; 93 (93)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div2|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider      ; work         ;
+;       |lpm_divide:Div3|                   ; 98 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div3                                                                                      ; work         ;
+;          |lpm_divide_jbm:auto_generated|  ; 98 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div3|lpm_divide_jbm:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_plh:divider| ; 98 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div3|lpm_divide_jbm:auto_generated|sign_div_unsign_plh:divider                            ; work         ;
+;                |alt_u_div_ove:divider|    ; 98 (98)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div3|lpm_divide_jbm:auto_generated|sign_div_unsign_plh:divider|alt_u_div_ove:divider      ; work         ;
+;       |lpm_divide:Div4|                   ; 60 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div4                                                                                      ; work         ;
+;          |lpm_divide_tcm:auto_generated|  ; 60 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div4|lpm_divide_tcm:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_3nh:divider| ; 60 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div4|lpm_divide_tcm:auto_generated|sign_div_unsign_3nh:divider                            ; work         ;
+;                |alt_u_div_c2f:divider|    ; 60 (60)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Div4|lpm_divide_tcm:auto_generated|sign_div_unsign_3nh:divider|alt_u_div_c2f:divider      ; work         ;
+;       |lpm_divide:Mod0|                   ; 31 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod0                                                                                      ; work         ;
+;          |lpm_divide_62m:auto_generated|  ; 31 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod0|lpm_divide_62m:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 31 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                            ; work         ;
+;                |alt_u_div_ose:divider|    ; 31 (31)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod0|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider      ; work         ;
+;       |lpm_divide:Mod1|                   ; 31 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod1                                                                                      ; work         ;
+;          |lpm_divide_62m:auto_generated|  ; 31 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod1|lpm_divide_62m:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_9kh:divider| ; 31 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod1|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider                            ; work         ;
+;                |alt_u_div_ose:divider|    ; 31 (31)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod1|lpm_divide_62m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_ose:divider      ; work         ;
+;       |lpm_divide:Mod2|                   ; 97 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod2                                                                                      ; work         ;
+;          |lpm_divide_j3m:auto_generated|  ; 97 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod2|lpm_divide_j3m:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 97 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod2|lpm_divide_j3m:auto_generated|sign_div_unsign_mlh:divider                            ; work         ;
+;                |alt_u_div_ive:divider|    ; 97 (97)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod2|lpm_divide_j3m:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider      ; work         ;
+;       |lpm_divide:Mod3|                   ; 83 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod3                                                                                      ; work         ;
+;          |lpm_divide_j3m:auto_generated|  ; 83 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod3|lpm_divide_j3m:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 83 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod3|lpm_divide_j3m:auto_generated|sign_div_unsign_mlh:divider                            ; work         ;
+;                |alt_u_div_ive:divider|    ; 83 (83)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod3|lpm_divide_j3m:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider      ; work         ;
+;       |lpm_divide:Mod4|                   ; 49 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod4                                                                                      ; work         ;
+;          |lpm_divide_j3m:auto_generated|  ; 49 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod4|lpm_divide_j3m:auto_generated                                                        ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 49 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod4|lpm_divide_j3m:auto_generated|sign_div_unsign_mlh:divider                            ; work         ;
+;                |alt_u_div_ive:divider|    ; 49 (49)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |adc_to_vga|vga:comb_3|lpm_divide:Mod4|lpm_divide_j3m:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider      ; work         ;
++-------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary                                ;
++---------------------+-------------+---------------------+-------------------+
+; Statistic           ; Number Used ; Available per Block ; Maximum Available ;
++---------------------+-------------+---------------------+-------------------+
+; Independent 18x18   ; 2           ; 2.00                ; --                ;
+; DSP Block           ; 2           ; --                  ; --                ;
+; DSP 18-bit Element  ; 2           ; 2.00                ; --                ;
+; Unsigned Multiplier ; 2           ; --                  ; --                ;
++---------------------+-------------+---------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------+
+; State Machine - |adc_to_vga|frequency:system_3|mode ;
++---------+---------+---------+-----------------------+
+; Name    ; mode.01 ; mode.11 ; mode.00               ;
++---------+---------+---------+-----------------------+
+; mode.00 ; 0       ; 0       ; 0                     ;
+; mode.01 ; 1       ; 0       ; 1                     ;
+; mode.11 ; 0       ; 1       ; 1                     ;
++---------+---------+---------+-----------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |adc_to_vga|ADC:system_1|state                                                                        ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; Name         ; state.CYCLE3 ; state.CYCLE2 ; state.CYCLE1 ; state.CYCLE0 ; state.QUIET2 ; state.QUIET1 ; state.QUIET0 ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+; state.QUIET0 ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ;
+; state.QUIET1 ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 1            ;
+; state.QUIET2 ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 1            ;
+; state.CYCLE0 ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 1            ;
+; state.CYCLE1 ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 1            ;
+; state.CYCLE2 ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 1            ;
+; state.CYCLE3 ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; vga:comb_3|green[0..6]                 ; Merged with vga:comb_3|green[7]        ;
+; vga:comb_3|red[0..6]                   ; Merged with vga:comb_3|red[7]          ;
+; vga:comb_3|blue[0..6]                  ; Merged with vga:comb_3|blue[7]         ;
+; vga:comb_3|blue[7]                     ; Stuck at GND due to stuck port data_in ;
+; vga:comb_3|vga_B[0..7]                 ; Stuck at GND due to stuck port data_in ;
+; ADC:system_1|state~3                   ; Lost fanout                            ;
+; ADC:system_1|state~4                   ; Lost fanout                            ;
+; ADC:system_1|state~5                   ; Lost fanout                            ;
+; Total Number of Removed Registers = 33 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                          ;
++--------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name      ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++--------------------+---------------------------+-------------------------------------------------------------------------------------+
+; vga:comb_3|blue[7] ; Stuck at GND              ; vga:comb_3|vga_B[7], vga:comb_3|vga_B[6], vga:comb_3|vga_B[5], vga:comb_3|vga_B[4], ;
+;                    ; due to stuck port data_in ; vga:comb_3|vga_B[3], vga:comb_3|vga_B[2], vga:comb_3|vga_B[1], vga:comb_3|vga_B[0]  ;
++--------------------+---------------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 296   ;
+; Number of registers using Synchronous Clear  ; 177   ;
+; Number of registers using Synchronous Load   ; 12    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 133   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; ADC:system_1|ADC_CS_N                  ; 2       ;
+; ADC:system_1|ADC_SCLK                  ; 2       ;
+; magnitude:system_2|min[0]              ; 4       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |adc_to_vga|ADC:system_1|buffer[9]         ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |adc_to_vga|ADC:system_1|ADC_DIN           ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 0 LEs                ; 22 LEs                 ; Yes        ; |adc_to_vga|magnitude:system_2|min[3]      ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |adc_to_vga|frequency:system_3|counter[18] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |adc_to_vga|frequency:system_3|mode        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ADC:system_1 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; CODING         ; 1     ; Unsigned Binary                  ;
+; RANGE          ; 0     ; Unsigned Binary                  ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_3am ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div1 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_3am ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_62m ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div4 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 12             ; Untyped                           ;
+; LPM_WIDTHD             ; 10             ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_tcm ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div3 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 12             ; Untyped                           ;
+; LPM_WIDTHD             ; 7              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_jbm ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod4 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 12             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_j3m ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Div2 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 12             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod3 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 12             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_j3m ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: vga:comb_3|lpm_divide:Mod2 ;
++------------------------+----------------+-----------------------------------+
+; Parameter Name         ; Value          ; Type                              ;
++------------------------+----------------+-----------------------------------+
+; LPM_WIDTHN             ; 12             ; Untyped                           ;
+; LPM_WIDTHD             ; 4              ; Untyped                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                           ;
+; LPM_PIPELINE           ; 0              ; Untyped                           ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                           ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                           ;
+; CBXI_PARAMETER         ; lpm_divide_j3m ; Untyped                           ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                           ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                    ;
++------------------------+----------------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: frequency:system_3|lpm_divide:Div0 ;
++------------------------+----------------+-------------------------------------------+
+; Parameter Name         ; Value          ; Type                                      ;
++------------------------+----------------+-------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                   ;
+; LPM_WIDTHD             ; 32             ; Untyped                                   ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                   ;
+; LPM_PIPELINE           ; 0              ; Untyped                                   ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                   ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                   ;
+; CBXI_PARAMETER         ; lpm_divide_rqo ; Untyped                                   ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                   ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                   ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                            ;
++------------------------+----------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga:comb_3|hvsync_generator:comb_331"                                                                                                                                             ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga:comb_3"                                                                                                                                                                        ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                             ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; freq ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (12 bits) it drives.  The 20 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "frequency:system_3"                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; freq_out[31..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:09     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Jun 04 07:32:24 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off adc_to_vga -c adc_to_vga
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file adc.v
+    Info (12023): Found entity 1: ADC
+Info (12021): Found 1 design units, including 1 entities, in source file magnitude.v
+    Info (12023): Found entity 1: magnitude
+Info (12021): Found 1 design units, including 1 entities, in source file adc_to_vga.v
+    Info (12023): Found entity 1: adc_to_vga
+Info (12021): Found 1 design units, including 1 entities, in source file frequency.v
+    Info (12023): Found entity 1: frequency
+Info (12021): Found 1 design units, including 1 entities, in source file hvsync_generator.v
+    Info (12023): Found entity 1: hvsync_generator
+Info (12021): Found 1 design units, including 1 entities, in source file vga.v
+    Info (12023): Found entity 1: vga
+Warning (10222): Verilog HDL Parameter Declaration warning at ADC.v(24): Parameter Declaration in module "ADC" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Warning (10222): Verilog HDL Parameter Declaration warning at ADC.v(25): Parameter Declaration in module "ADC" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List
+Critical Warning (10846): Verilog HDL Instantiation warning at vga.v(87): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at adc_to_vga.v(25): instance has no name
+Info (12127): Elaborating entity "adc_to_vga" for the top level hierarchy
+Info (12128): Elaborating entity "ADC" for hierarchy "ADC:system_1"
+Warning (10036): Verilog HDL or VHDL warning at ADC.v(19): object "temp" assigned a value but never read
+Info (12128): Elaborating entity "magnitude" for hierarchy "magnitude:system_2"
+Warning (10230): Verilog HDL assignment warning at magnitude.v(28): truncated value with size 32 to match size of target (12)
+Info (12128): Elaborating entity "frequency" for hierarchy "frequency:system_3"
+Info (12128): Elaborating entity "vga" for hierarchy "vga:comb_3"
+Warning (10858): Verilog HDL warning at vga.v(18): object vrms_sayi1 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(19): object vrms_sayi2 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(51): object v1 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(51): object v2 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(51): object v3 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(51): object v4 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(51): object v5 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(51): object v6 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(51): object v7 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(51): object v8 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(52): object S1 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(52): object S2 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(52): object S3 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(52): object S4 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(52): object S5 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(52): object S6 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(52): object S7 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(53): object t1 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(53): object t2 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(53): object t3 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(53): object t4 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(53): object t5 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(53): object t6 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(53): object t7 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(54): object g1 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(54): object g2 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(54): object g3 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(54): object g4 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(54): object g5 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(54): object g6 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(54): object g7 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(55): object h1 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(55): object h2 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(55): object h3 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(55): object h4 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(55): object h5 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(55): object h6 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(55): object h7 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(56): object y1 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(56): object y2 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(56): object y3 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(56): object y4 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(56): object y5 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(56): object y6 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(56): object y7 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(57): object l1 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(57): object l2 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(57): object l3 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(57): object l4 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(57): object l5 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(57): object l6 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(57): object l7 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(58): object u1 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(58): object u2 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(58): object u3 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(58): object u4 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(58): object u5 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(58): object u6 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(58): object u7 used but never assigned
+Warning (10858): Verilog HDL warning at vga.v(59): object dalgalar used but never assigned
+Warning (10855): Verilog HDL warning at vga.v(63): initial value for variable clk_2 should be constant
+Warning (10646): Verilog HDL Event Control warning at vga.v(75): posedge or negedge of vector "clk_2" depends solely on its least-significant bit
+Warning (10646): Verilog HDL Event Control warning at vga.v(113): posedge or negedge of vector "clk_25" depends solely on its least-significant bit
+Warning (10762): Verilog HDL Case Statement warning at vga.v(196): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(312): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(418): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(532): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(637): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(752): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(855): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(909): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(1022): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(1140): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(1243): can't check case statement for completeness because the case expression has too many possible states
+Warning (10762): Verilog HDL Case Statement warning at vga.v(1351): can't check case statement for completeness because the case expression has too many possible states
+Warning (10230): Verilog HDL assignment warning at vga.v(1450): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at vga.v(1453): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at vga.v(1460): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at vga.v(1477): truncated value with size 32 to match size of target (1)
+Warning (10030): Net "vrms_sayi1" at vga.v(18) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "vrms_sayi2" at vga.v(19) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "v1" at vga.v(51) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "v2" at vga.v(51) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "v3" at vga.v(51) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "v4" at vga.v(51) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "v5" at vga.v(51) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "v6" at vga.v(51) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "v7" at vga.v(51) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "v8" at vga.v(51) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "S1" at vga.v(52) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "S2" at vga.v(52) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "S3" at vga.v(52) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "S4" at vga.v(52) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "S5" at vga.v(52) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "S6" at vga.v(52) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "S7" at vga.v(52) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "t1" at vga.v(53) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "t2" at vga.v(53) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "t3" at vga.v(53) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "t4" at vga.v(53) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "t5" at vga.v(53) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "t6" at vga.v(53) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "t7" at vga.v(53) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "g1" at vga.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "g2" at vga.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "g3" at vga.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "g4" at vga.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "g5" at vga.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "g6" at vga.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "g7" at vga.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "h1" at vga.v(55) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "h2" at vga.v(55) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "h3" at vga.v(55) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "h4" at vga.v(55) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "h5" at vga.v(55) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "h6" at vga.v(55) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "h7" at vga.v(55) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "y1" at vga.v(56) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "y2" at vga.v(56) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "y3" at vga.v(56) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "y4" at vga.v(56) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "y5" at vga.v(56) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "y6" at vga.v(56) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "y7" at vga.v(56) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "l1" at vga.v(57) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "l2" at vga.v(57) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "l3" at vga.v(57) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "l4" at vga.v(57) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "l5" at vga.v(57) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "l6" at vga.v(57) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "l7" at vga.v(57) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "u1" at vga.v(58) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "u2" at vga.v(58) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "u3" at vga.v(58) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "u4" at vga.v(58) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "u5" at vga.v(58) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "u6" at vga.v(58) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "u7" at vga.v(58) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "dalgalar" at vga.v(59) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "hvsync_generator" for hierarchy "vga:comb_3|hvsync_generator:comb_331"
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(18): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at hvsync_generator.v(27): truncated value with size 32 to match size of target (9)
+Info (278001): Inferred 11 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Div1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Div4"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Div3"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Mod4"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Div2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Mod3"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "vga:comb_3|Mod2"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "frequency:system_3|Div0"
+Info (12130): Elaborated megafunction instantiation "vga:comb_3|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "vga:comb_3|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3am.tdf
+    Info (12023): Found entity 1: lpm_divide_3am
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ose.tdf
+    Info (12023): Found entity 1: alt_u_div_ose
+Info (12130): Elaborated megafunction instantiation "vga:comb_3|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "vga:comb_3|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_62m.tdf
+    Info (12023): Found entity 1: lpm_divide_62m
+Info (12130): Elaborated megafunction instantiation "vga:comb_3|lpm_divide:Div4"
+Info (12133): Instantiated megafunction "vga:comb_3|lpm_divide:Div4" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "12"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_tcm.tdf
+    Info (12023): Found entity 1: lpm_divide_tcm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_3nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_3nh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_c2f.tdf
+    Info (12023): Found entity 1: alt_u_div_c2f
+Info (12130): Elaborated megafunction instantiation "vga:comb_3|lpm_divide:Div3"
+Info (12133): Instantiated megafunction "vga:comb_3|lpm_divide:Div3" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "12"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jbm.tdf
+    Info (12023): Found entity 1: lpm_divide_jbm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_plh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_plh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ove.tdf
+    Info (12023): Found entity 1: alt_u_div_ove
+Info (12130): Elaborated megafunction instantiation "vga:comb_3|lpm_divide:Mod4"
+Info (12133): Instantiated megafunction "vga:comb_3|lpm_divide:Mod4" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "12"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_j3m.tdf
+    Info (12023): Found entity 1: lpm_divide_j3m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_mlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_mlh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ive.tdf
+    Info (12023): Found entity 1: alt_u_div_ive
+Info (12130): Elaborated megafunction instantiation "vga:comb_3|lpm_divide:Div2"
+Info (12133): Instantiated megafunction "vga:comb_3|lpm_divide:Div2" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "12"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_gbm.tdf
+    Info (12023): Found entity 1: lpm_divide_gbm
+Info (12130): Elaborated megafunction instantiation "frequency:system_3|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "frequency:system_3|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_rqo.tdf
+    Info (12023): Found entity 1: lpm_divide_rqo
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o2f.tdf
+    Info (12023): Found entity 1: alt_u_div_o2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_4p9.tdf
+    Info (12023): Found entity 1: lpm_abs_4p9
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "vga_B[0]" is stuck at GND
+    Warning (13410): Pin "vga_B[1]" is stuck at GND
+    Warning (13410): Pin "vga_B[2]" is stuck at GND
+    Warning (13410): Pin "vga_B[3]" is stuck at GND
+    Warning (13410): Pin "vga_B[4]" is stuck at GND
+    Warning (13410): Pin "vga_B[5]" is stuck at GND
+    Warning (13410): Pin "vga_B[6]" is stuck at GND
+    Warning (13410): Pin "vga_B[7]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/nailt/Desktop/nail/adc_to_vga/output_files/adc_to_vga.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2283 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 2246 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 157 warnings
+    Info: Peak virtual memory: 647 megabytes
+    Info: Processing ended: Mon Jun 04 07:32:36 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/nailt/Desktop/nail/adc_to_vga/output_files/adc_to_vga.map.smsg.
+
+

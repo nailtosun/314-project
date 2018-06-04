@@ -1,0 +1,197 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'frequency:system_3|clk_en'
+Slack : -73.341
+TNS   : -1022.778
+
+Type  : Slow 1100mV 85C Model Setup 'vga:comb_3|clk_25[0]'
+Slack : -20.983
+TNS   : -293.874
+
+Type  : Slow 1100mV 85C Model Setup 'clock'
+Slack : -3.900
+TNS   : -395.121
+
+Type  : Slow 1100mV 85C Model Setup 'ADC:system_1|clk'
+Slack : -1.510
+TNS   : -57.059
+
+Type  : Slow 1100mV 85C Model Hold 'clock'
+Slack : -1.422
+TNS   : -7.911
+
+Type  : Slow 1100mV 85C Model Hold 'frequency:system_3|clk_en'
+Slack : 0.043
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'vga:comb_3|clk_25[0]'
+Slack : 0.229
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'ADC:system_1|clk'
+Slack : 0.232
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -2.225
+TNS   : -118.514
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'frequency:system_3|clk_en'
+Slack : -0.500
+TNS   : -41.602
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vga:comb_3|clk_25[0]'
+Slack : -0.394
+TNS   : -32.592
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ADC:system_1|clk'
+Slack : -0.394
+TNS   : -27.216
+
+Type  : Slow 1100mV 0C Model Setup 'frequency:system_3|clk_en'
+Slack : -76.110
+TNS   : -1059.273
+
+Type  : Slow 1100mV 0C Model Setup 'vga:comb_3|clk_25[0]'
+Slack : -21.795
+TNS   : -301.584
+
+Type  : Slow 1100mV 0C Model Setup 'clock'
+Slack : -3.887
+TNS   : -384.602
+
+Type  : Slow 1100mV 0C Model Setup 'ADC:system_1|clk'
+Slack : -1.438
+TNS   : -52.458
+
+Type  : Slow 1100mV 0C Model Hold 'clock'
+Slack : -1.198
+TNS   : -12.647
+
+Type  : Slow 1100mV 0C Model Hold 'frequency:system_3|clk_en'
+Slack : 0.070
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'ADC:system_1|clk'
+Slack : 0.194
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'vga:comb_3|clk_25[0]'
+Slack : 0.211
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -2.225
+TNS   : -125.590
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'frequency:system_3|clk_en'
+Slack : -0.524
+TNS   : -42.505
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vga:comb_3|clk_25[0]'
+Slack : -0.394
+TNS   : -32.552
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ADC:system_1|clk'
+Slack : -0.394
+TNS   : -27.050
+
+Type  : Fast 1100mV 85C Model Setup 'frequency:system_3|clk_en'
+Slack : -39.894
+TNS   : -556.416
+
+Type  : Fast 1100mV 85C Model Setup 'vga:comb_3|clk_25[0]'
+Slack : -10.865
+TNS   : -155.479
+
+Type  : Fast 1100mV 85C Model Setup 'clock'
+Slack : -2.071
+TNS   : -186.756
+
+Type  : Fast 1100mV 85C Model Setup 'ADC:system_1|clk'
+Slack : -0.636
+TNS   : -19.422
+
+Type  : Fast 1100mV 85C Model Hold 'clock'
+Slack : -0.527
+TNS   : -9.263
+
+Type  : Fast 1100mV 85C Model Hold 'frequency:system_3|clk_en'
+Slack : -0.205
+TNS   : -0.492
+
+Type  : Fast 1100mV 85C Model Hold 'vga:comb_3|clk_25[0]'
+Slack : 0.047
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'ADC:system_1|clk'
+Slack : 0.059
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock'
+Slack : -1.702
+TNS   : -53.058
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'frequency:system_3|clk_en'
+Slack : -0.245
+TNS   : -4.589
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vga:comb_3|clk_25[0]'
+Slack : -0.036
+TNS   : -0.707
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ADC:system_1|clk'
+Slack : 0.015
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'frequency:system_3|clk_en'
+Slack : -38.339
+TNS   : -531.389
+
+Type  : Fast 1100mV 0C Model Setup 'vga:comb_3|clk_25[0]'
+Slack : -10.331
+TNS   : -145.370
+
+Type  : Fast 1100mV 0C Model Setup 'clock'
+Slack : -1.852
+TNS   : -161.763
+
+Type  : Fast 1100mV 0C Model Setup 'ADC:system_1|clk'
+Slack : -0.559
+TNS   : -15.795
+
+Type  : Fast 1100mV 0C Model Hold 'clock'
+Slack : -0.601
+TNS   : -12.369
+
+Type  : Fast 1100mV 0C Model Hold 'frequency:system_3|clk_en'
+Slack : -0.221
+TNS   : -0.948
+
+Type  : Fast 1100mV 0C Model Hold 'vga:comb_3|clk_25[0]'
+Slack : 0.028
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'ADC:system_1|clk'
+Slack : 0.032
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock'
+Slack : -1.702
+TNS   : -53.064
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'frequency:system_3|clk_en'
+Slack : -0.188
+TNS   : -2.858
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vga:comb_3|clk_25[0]'
+Slack : -0.008
+TNS   : -0.008
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ADC:system_1|clk'
+Slack : 0.038
+TNS   : 0.000
+
+------------------------------------------------------------
